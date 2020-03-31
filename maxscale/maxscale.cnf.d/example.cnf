@@ -21,4 +21,4 @@ filters=Masking
 type=listener
 service=Masking-Service
 protocol=MySQLClient
-port=4008
+port=3306
