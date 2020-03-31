@@ -1,13 +1,18 @@
+# Example of starting maxscale using environment variables
+
 ## setup
 ```
-docker-compose up -d
+docker-compose up -d --build
+docker-compose ps
 ```
 
 ## config file
 ```
-maxscale.cnf.d
-├── example.cnf
-└── masking_rules.json
+maxscale
+├── maxscale.cnf
+└── maxscale.cnf.d
+    ├── example.cnf
+    └── masking_rules.json
 ```
 
 ## access mysql
@@ -17,7 +22,7 @@ docker-compose exec mysql mysql -umaxuser -pmaxpwd -h localhost test
 
 ## access mysql via maxscale
 ```
-docker-compose exec mysql mysql -umaxuser -pmaxpwd -h maxscale test -P 4008
+docker-compose exec mysql mysql -umaxuser -pmaxpwd -h maxscale test -P 3306
 ```
 
 ## masking check
