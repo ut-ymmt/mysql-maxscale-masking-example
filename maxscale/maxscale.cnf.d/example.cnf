@@ -13,8 +13,8 @@ rules=/etc/maxscale.cnf.d/masking_rules.json
 type=service
 router=readconnroute
 servers=db-server
-user=maxuser
-password=maxpwd
+user=$DB_USER
+password=$DB_PASS
 filters=Masking
 
 [Masking-Listener]

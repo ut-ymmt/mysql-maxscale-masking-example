@@ -14,8 +14,10 @@ services:
       build:
         context: .
         dockerfile: Dockerfile.maxscale
-        #        depends_on:
-        #            - mysql
-        #        ports:
-        #            - "4008:4008"  # proxy port
-        #            - "8989:8989"  # REST API port
+      environment:
+        DB_USER: 'maxuser'
+        DB_PASS: 'maxpwd'
+      ports:
+        - "4008:4008"  # proxy port
+        - "8989:8989"  # REST API port
+
