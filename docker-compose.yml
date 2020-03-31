@@ -11,11 +11,11 @@ services:
             - "3306:3306"
 
     maxscale:
-        image: mariadb/maxscale:2.4.7
-        depends_on:
-            - mysql
-        volumes:
-            - ./maxscale.cnf.d:/etc/maxscale.cnf.d
-        ports:
-            - "4008:4008"  # proxy port
-            - "8989:8989"  # REST API port
+      build:
+        context: .
+        dockerfile: Dockerfile.maxscale
+        #        depends_on:
+        #            - mysql
+        #        ports:
+        #            - "4008:4008"  # proxy port
+        #            - "8989:8989"  # REST API port
